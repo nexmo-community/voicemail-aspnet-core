@@ -8,10 +8,10 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
-using Nexmo.Api.Request;
-using Nexmo.Api.Voice;
-using Nexmo.Api.Voice.EventWebhooks;
-using Nexmo.Api.Voice.Nccos;
+using Vonage.Request;
+using Vonage.Voice;
+using Vonage.Voice.EventWebhooks;
+using Vonage.Voice.Nccos;
 
 namespace VonageVoicemail.Controllers
 {
@@ -27,7 +27,7 @@ namespace VonageVoicemail.Controllers
         }
 
         [HttpGet]
-        [Route("webhooks/answer")]
+        [Route("/webhooks/answer")]
         public string Answer()
         {
             var host = Request.Host.ToString();
@@ -56,7 +56,7 @@ namespace VonageVoicemail.Controllers
         }
 
         [HttpPost]
-        [Route("webhooks/recording")]
+        [Route("/webhooks/recording")]
         public IActionResult Recording()
         {
             Record record;
